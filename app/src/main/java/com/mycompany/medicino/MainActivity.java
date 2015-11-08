@@ -20,12 +20,14 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
     public final static String EXTRA_MESSAGE = "com.alexboldtcompany.medicino.MESSAGE";
+    DrugScanner query;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        query = new DrugScanner();
 
 
     }
@@ -65,15 +67,16 @@ public class MainActivity extends AppCompatActivity {
         //catch(Exception e){
 
         //}
-        DrugScanner query = new DrugScanner();
+
         //DrugScanner query = new DrugScanner("app/src/main/res/medicine.txt");
         DrugScanner.Node[] input = query.search(searchTerm);
         String answer="";
         if(input!=null) {
+            //answer += "/n" + "/n" + "/n";
             for (DrugScanner.Node n : input) {
                 for (int i = 0; i < n.info().length; i++) {
                     if (i == 0) {
-                        answer += "Generic name: " + "\n" + n.info()[i] + "\n" + "\n" + "Brands: " + "\n";
+                        answer += "\n" + "Generic name: " + "\n" + n.info()[i] + "\n" + "\n" + "Brands: " + "\n";
                     } else {
                         answer += n.info()[i] + "\n";
                     }

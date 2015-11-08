@@ -19,7 +19,7 @@ public class MedicineList extends AppCompatActivity {
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         TextView textView = (TextView) findViewById(R.id.myTextView);
-        textView.setTextSize(30);
+        textView.setTextSize(25);
         textView.setText(message);
         
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

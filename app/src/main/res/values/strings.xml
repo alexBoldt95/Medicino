@@ -845,4 +845,5 @@ Reglan
 Maxalt
 
 </string>
+    <string name="title_activity_delete_this">delete_this</string>
 </resources>
