@@ -1049,6 +1049,7 @@ public class DrugScanner
 
     public Node[] search(String input){
         ArrayList<Node> answer = new ArrayList<Node>();
+            input = input.toLowerCase();
 
         answer = brandLookUp(input);
 
